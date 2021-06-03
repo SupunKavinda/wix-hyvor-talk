@@ -1,5 +1,5 @@
 function createHtDiv() {
-  conts div = document.createElement("div");
+  const div = document.createElement("div");
   div.id = "hyvor-talk-view";
   return div;
 }
