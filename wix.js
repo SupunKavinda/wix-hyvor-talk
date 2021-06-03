@@ -5,7 +5,7 @@ class HyvorTalkElement extends HTMLElement {
   }
 
   connectedCallback() {
-    
+    this.innerHTML = '<br/><br/><br/>Hello World!';
   }
 }
 customElements.define('wix-hyvor-talk', HyvorTalkElement);
