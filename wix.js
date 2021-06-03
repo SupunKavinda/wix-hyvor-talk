@@ -14,13 +14,12 @@ function createScript() {
 class HyvorTalkElement extends HTMLElement {
   constructor() {
     super();
-    console.log("Hyvor Talk Loading");
   }
 
   connectedCallback() {
-    window.HYVOR_TALK_WEBSITE = 4232;
+    window.HYVOR_TALK_WEBSITE = this.getAttribute('website-id');
     window.HYVOR_TALK_CONFIG = {
-      id: window.location.path,
+      id: window.location.pathname,
       url: false
     };
     this.appendChild(createHtDiv());
