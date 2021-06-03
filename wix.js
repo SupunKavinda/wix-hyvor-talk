@@ -1,3 +1,16 @@
+function createHtDiv() {
+  conts div = document.createElement("div");
+  div.id = "hyvor-talk-view";
+  return div;
+}
+
+function createScript() {
+  const script = document.createElement("script");
+  script.src = "https://talk.hyvor.com/web-api/embed";
+  script.async = true;
+  return script;
+}
+
 class HyvorTalkElement extends HTMLElement {
   constructor() {
     super();
@@ -5,7 +18,13 @@ class HyvorTalkElement extends HTMLElement {
   }
 
   connectedCallback() {
-    this.innerHTML = '<br/><br/><br/>Hello World!';
+    window.HYVOR_TALK_WEBSITE = 4232;
+    window.HYVOR_TALK_CONFIG = {
+      id: window.location.path,
+      url: false
+    };
+    this.appendChild(createHtDiv());
+    this.appendChild(createScript());
   }
 }
 customElements.define('wix-hyvor-talk', HyvorTalkElement);
