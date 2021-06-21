@@ -22,6 +22,7 @@ class HyvorTalkElement extends HTMLElement {
       id: window.location.pathname,
       url: false
     };
+    this.style.display = "block";
     this.appendChild(createHtDiv());
     this.appendChild(createScript());
   }
